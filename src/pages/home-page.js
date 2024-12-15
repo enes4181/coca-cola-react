@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Container, Grid, Typography, IconButton, Divider, Box, TextField, Checkbox } from '@mui/material';
+import { Container, Grid, Typography, IconButton, Divider, Box, TextField, Checkbox, Button } from '@mui/material';
 import { Favorite, FavoriteBorder, ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import { Autocomplete } from '@mui/material';
 import { productService } from '../api/product';
@@ -18,7 +18,7 @@ const Home = () => {
   const [showFavorites, setShowFavorites] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState({});
   const { errorMessage, SnackbarComponent } = useSnackbar();
-
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const API_URL = process.env.REACT_APP_API_URL
   const navigate = useNavigate();
 
@@ -187,7 +187,15 @@ const Home = () => {
               {showFavorites ? <Favorite color="secondary" style={{ fontSize: '2rem' }} /> : <FavoriteBorder style={{ fontSize: '2rem' }} />}
             </IconButton>
           </Grid>
+          {user?.role === 'admin' && (
+          <Grid item xs={12} sm={4} md={4}>
+             <Button variant="contained" color="primary" href="/admin">
+          Admin Panel
+        </Button>
+          </Grid>
+          )}
         </Grid>
+
       </Box>
       <Grid container spacing={4} style={{ marginTop: '20px' }}>
         {filteredProducts.map((product) => (
