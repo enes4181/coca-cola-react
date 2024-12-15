@@ -146,7 +146,6 @@ export default function SignIn(props) {
       email,
       password,
     };
-    console.log("loginData", loginData);
     fetchLogin(loginData);
   };
 
@@ -157,16 +156,12 @@ export default function SignIn(props) {
         const loginToken = {
           token: responseLogin.token,
         };
-        const responseVerifyUser = await apiService.meUser(loginToken);
-        console.log("responseLogin", responseLogin);
-        console.log("responseVerifyUser", responseVerifyUser);
 
+        const responseVerifyUser = await apiService.meUser(loginToken);
         if (responseVerifyUser?.success === false) {
           throw new Error(responseVerifyUser.message || "Something went wrong");
         }
-        console.log("responseVerifyUser.user", responseVerifyUser.data);
-        console.log("responseLogin.token", responseLogin.token);
-
+  
         setIsAuthenticated(true);
         setUser(responseVerifyUser.data);
         setUserToken(responseLogin.token);

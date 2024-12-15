@@ -144,9 +144,7 @@ export default function SignUp(props) {
     };
     try {
   
-     console.log("formData", formData)
      const response = await apiService.registerUser(formData)
-      console.log("response", response)
       if (response?.success === false) {
         throw new Error(data.message || 'Something went wrong');
       }

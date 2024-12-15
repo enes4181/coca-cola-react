@@ -1,6 +1,5 @@
 const apiURL = process.env.REACT_APP_API_URL
 const API_URL = `${apiURL}api`;
-console.log("API_URL", API_URL);
 
 const getHeaders = ({token}) => {
     return {

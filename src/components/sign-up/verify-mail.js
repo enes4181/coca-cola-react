@@ -33,11 +33,8 @@ function VerifyMail({ open, handleClose, apiResponseData }) {
       },
     };
     try {
-      console.log("verificationCode", newVerificationCode);
 
-      console.log("verifyMailData", verifyMailData);
       const response = await apiService.verifyEmail(verifyMailData);
-      console.log("response", response);
       if (response?.success === false) {
         throw new Error(data.message || "Something went wrong");
       }

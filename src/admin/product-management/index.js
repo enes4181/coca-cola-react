@@ -84,11 +84,6 @@ const ProductManagement = () => {
         formData.append('deletedImages', image);
       });
 
-      console.log("FormData content:");
-      for (let pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-      }
-
       if (editingProduct) {
         await productService.updateProduct(editingProduct._id, formData, { token });
         setEditingProduct(null);

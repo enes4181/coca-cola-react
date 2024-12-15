@@ -40,9 +40,6 @@ const useAuthStore = create((set) => ({
       const user = JSON.parse(sessionStorage.getItem("user"));
       const userToken = sessionStorage.getItem("userToken");
 
-      console.log("store user", user);
-      console.log("store userToken", userToken);
-
       if (user && userToken) {
         set({ isAuthenticated: true, user, userToken, isLoading: false });
       } else {

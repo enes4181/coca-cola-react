@@ -35,7 +35,6 @@ function ForgetPassword({ open, handleClose, screenValue, setScreenValue }) {
       if (response?.success === false) {
         throw new Error(response.message || "Something went wrong");
       }
-      console.log("response", response);
       successMessage(
         response?.message ||
           "Şifre sıfırlama kodu e-posta adresinize gönderildi."
@@ -58,9 +57,7 @@ function ForgetPassword({ open, handleClose, screenValue, setScreenValue }) {
         throw new Error(response.message || "Something went wrong");
       }
       setTemporaryToken(response?.data?.temporaryToken);
-      console.log("requestResetMail", requestResetMail);
 
-      console.log("response", response);
       successMessage(response?.message);
       setScreenValue("newPassword");
     } catch (error) {
@@ -79,8 +76,6 @@ function ForgetPassword({ open, handleClose, screenValue, setScreenValue }) {
       if (response?.success === false) {
         throw new Error(response.message || "Something went wrong");
       }
-      console.log("requestNewPassword", requestNewPassword);
-      console.log("response", response);
       successMessage(response?.message);
       successMessage("Girişe yönlendiriliyorsunuz...");
       setTimeout(() => {
