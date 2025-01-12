@@ -189,7 +189,7 @@ export default function SignUp(props) {
                 required
                 fullWidth
                 id="name"
-                placeholder="Enes"
+                placeholder="Adınız"
                 error={nameError}
                 helperText={nameErrorMessage}
                 color={nameError ? 'error' : 'primary'}
@@ -203,7 +203,7 @@ export default function SignUp(props) {
                 required
                 fullWidth
                 id="lastName"
-                placeholder="Çopoğlu"
+                placeholder="Soyadınız"
                 error={lastNameError}
                 helperText={lastNameErrorMessage}
                 color={lastNameError ? 'error' : 'primary'}
@@ -215,7 +215,7 @@ export default function SignUp(props) {
                 required
                 fullWidth
                 id="email"
-                placeholder="your@email.com"
+                placeholder="mail@cci.com.tr"
                 name="email"
                 autoComplete="email"
                 variant="outlined"

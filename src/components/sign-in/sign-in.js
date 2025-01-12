@@ -212,7 +212,7 @@ export default function SignIn(props) {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="mail@cci.com.tr"
                 autoComplete="email"
                 autoFocus
                 required

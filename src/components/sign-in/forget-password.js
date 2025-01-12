@@ -176,7 +176,7 @@ function ForgetPassword({ open, handleClose, screenValue, setScreenValue }) {
             id="email"
             name="email"
             label="Email address"
-            placeholder="Email address"
+            placeholder="mail@cci.com.tr"
             type="email"
             fullWidth
             value={resetMailValue}
