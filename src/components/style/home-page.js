@@ -1,4 +1,4 @@
-import {  IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 
 const StyledCard = styled('div')(({ theme }) => ({
@@ -7,13 +7,13 @@ const StyledCard = styled('div')(({ theme }) => ({
     transform: 'scale(1.05)',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
   },
-  height: '100%',
+  height: '400px', // Sabit yükseklik
+  width: '250px', // Sabit genişlik
   display: 'flex',
   flexDirection: 'column',
   borderRadius: '16px',
   overflow: 'hidden',
   backgroundColor: theme.palette.background.default,
-  width: '250px',
   margin: 'auto',
   boxShadow: 'none',
   position: 'relative',
@@ -48,7 +48,7 @@ const StyledCardContent = styled('div')(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   fontSize: '0.875rem',
-  height: '10%',
+  height: '15%',
 }));
 
 const FavoriteIconStyled = styled(IconButton)(({ theme }) => ({
@@ -62,4 +62,4 @@ const FavoriteIconStyled = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-  export { StyledCard, StyledCardMedia, StyledCardContent, FavoriteIconStyled };
+export { StyledCard, StyledCardMedia, StyledCardContent, FavoriteIconStyled };

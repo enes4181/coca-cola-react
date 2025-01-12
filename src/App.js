@@ -12,6 +12,7 @@ import ProductDetail from "./pages/product-detail";
 import useAuthStore from "./store/user";
 import ProtectedRoute from "./router/protected-route";
 import Unauthorized from "./pages/unauthorized";
+import './index.css';
 
 const App = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);

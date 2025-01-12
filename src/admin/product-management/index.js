@@ -6,6 +6,7 @@ import { productService } from '../../api/product';
 import { productTypeService } from '../../api/product-type';
 import { brandService } from '../../api/brand';
 import useSnackbar from '../../components/utils/message';
+import '../../index.css'; // index.css dosyasını import edin
 
 const ProductManagement = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,7 @@ const ProductManagement = () => {
   const [productToDelete, setProductToDelete] = useState(null);
   const { errorMessage, successMessage, SnackbarComponent } = useSnackbar();
 
-  const API_URL = process.env.REACT_APP_API_URL
+  const API_URL = process.env.REACT_APP_API_URL;
   const token = sessionStorage.getItem('userToken');
 
   const fetchProducts = useCallback(async () => {
@@ -47,7 +48,7 @@ const ProductManagement = () => {
       errorMessage(error.message || 'Error fetching product types');
       setProductTypes([]);
     }
-  }, [ errorMessage]);
+  }, [errorMessage]);
 
   const fetchBrands = useCallback(async () => {
     try {
@@ -58,7 +59,7 @@ const ProductManagement = () => {
       errorMessage(error.message || 'Error fetching brands');
       setBrands([]);
     }
-  }, [ errorMessage]);
+  }, [errorMessage]);
 
   useEffect(() => {
     fetchProducts();
@@ -204,9 +205,9 @@ const ProductManagement = () => {
   ];
 
   return (
-    <Container maxWidth="md" style={{ marginTop: '20px' }}>
+    <Container maxWidth="md" style={{ marginTop: '20px', fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
       <Paper elevation={3} style={{ padding: '20px' }}>
-        <h1>Product Management</h1>
+        <h1 style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Product Management</h1>
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} sm={6} md={4}>
             <TextField
@@ -216,6 +217,7 @@ const ProductManagement = () => {
               fullWidth
               size="small"
               variant="outlined"
+              style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -226,6 +228,7 @@ const ProductManagement = () => {
               fullWidth
               size="small"
               variant="outlined"
+              style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -236,18 +239,20 @@ const ProductManagement = () => {
               fullWidth
               size="small"
               variant="outlined"
+              style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <FormControl fullWidth size="small" variant="outlined">
-              <InputLabel>Product Type</InputLabel>
+              <InputLabel style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>Product Type</InputLabel>
               <Select
                 value={productTypeId || ''}
                 onChange={(e) => setProductTypeId(e.target.value)}
                 label="Product Type"
+                style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
               >
                 {productTypes.map((productType) => (
-                  <MenuItem key={productType._id} value={productType._id}>
+                  <MenuItem key={productType._id} value={productType._id} style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
                     {productType.name}
                   </MenuItem>
                 ))}
@@ -256,14 +261,15 @@ const ProductManagement = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <FormControl fullWidth size="small" variant="outlined">
-              <InputLabel>Brand</InputLabel>
+              <InputLabel style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>Brand</InputLabel>
               <Select
                 value={brandId || ''}
                 onChange={(e) => setBrandId(e.target.value)}
                 label="Brand"
+                style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
               >
                 {brands.map((brand) => (
-                  <MenuItem key={brand._id} value={brand._id}>
+                  <MenuItem key={brand._id} value={brand._id} style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
                     {brand.name}
                   </MenuItem>
                 ))}
@@ -280,17 +286,17 @@ const ProductManagement = () => {
               onChange={handleImageChange}
             />
             <label htmlFor="raised-button-file">
-              <Button variant="contained" component="span" fullWidth size="small">
+              <Button variant="contained" component="span" fullWidth size="small" style={{ fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}>
                 Upload Images
               </Button>
             </label>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Button variant="contained" color="primary" onClick={handleAddProduct} fullWidth size="small">
+            <Button variant="contained" color="primary" onClick={handleAddProduct} fullWidth size="small" style={{ fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}>
               {editingProduct ? 'Update Product' : 'Add Product'}
             </Button>
             {editingProduct && (
-              <Button variant="contained" color="secondary" onClick={handleCancelEdit} fullWidth size="small" style={{ marginTop: '10px' }}>
+              <Button variant="contained" color="secondary" onClick={handleCancelEdit} fullWidth size="small" style={{ marginTop: '10px', fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}>
                 Cancel
               </Button>
             )}
@@ -306,7 +312,7 @@ const ProductManagement = () => {
                     alt={image}
                   />
                 </ListItemAvatar>
-                <ListItemText primary={image} />
+                <ListItemText primary={image} style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }} />
                 <ListItemSecondaryAction>
                   <IconButton edge="end" aria-label="remove" onClick={() => handleRemoveExistingImage(index)}>
                     <RemoveCircle />
@@ -322,7 +328,7 @@ const ProductManagement = () => {
                     alt={image.name}
                   />
                 </ListItemAvatar>
-                <ListItemText primary={image.name} />
+                <ListItemText primary={image.name} style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }} />
                 <ListItemSecondaryAction>
                   <IconButton edge="end" aria-label="remove" onClick={() => handleRemoveNewImage(index)}>
                     <RemoveCircle />
@@ -340,17 +346,17 @@ const ProductManagement = () => {
         open={deleteDialogOpen}
         onClose={closeDeleteDialog}
       >
-        <DialogTitle>Delete Product</DialogTitle>
+        <DialogTitle style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Delete Product</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Are you sure you want to delete the product "{productToDelete?.name}"?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeDeleteDialog} color="primary">
+          <Button onClick={closeDeleteDialog} color="primary" style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             No
           </Button>
-          <Button onClick={handleDeleteProduct} color="primary" autoFocus>
+          <Button onClick={handleDeleteProduct} color="primary" autoFocus style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Yes
           </Button>
         </DialogActions>

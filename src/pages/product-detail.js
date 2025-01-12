@@ -10,12 +10,11 @@ import { useParams } from "react-router-dom";
 import { productService } from "../api/product";
 import { StyledCard, StyledCardContent, StyledCardMedia, StyledTypography } from "../components/style/product-detail";
 
-
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const API_URL = process.env.REACT_APP_API_URL
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -62,6 +61,7 @@ const ProductDetail = () => {
         backgroundColor: "#ebebeb",
         padding: "20px",
         borderRadius: "8px",
+        fontFamily: "TCCC-UnityText-Regular, sans-serif",
       }}
     >
       <StyledCard
@@ -120,13 +120,13 @@ const ProductDetail = () => {
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: "bold", color: "#333" }}
+                sx={{ fontWeight: "bold", color: "#3f51b5", fontFamily: "TCCC-UnityText-Bold, sans-serif" }}
               >
                 {product.brandName}
               </Typography>
               <Typography
                 variant="h6"
-                sx={{ color: "#ff5722", marginLeft: "10px" }}
+                sx={{ color: "#009688", marginLeft: "10px", fontFamily: "TCCC-UnityText-Bold, sans-serif" }}
               >
                 {product.productTypeName}
               </Typography>
@@ -137,6 +137,7 @@ const ProductDetail = () => {
                   position: "absolute",
                   top: "10px",
                   right: "10px",
+                  fontFamily: "TCCC-UnityText-Regular, sans-serif"
                 }}
               >
                 {product.name}
@@ -144,10 +145,11 @@ const ProductDetail = () => {
             </Box>
             <StyledTypography
               variant="body2"
-              color="text.secondary"
+              color="textSecondary"
               gutterBottom
+              sx={{ fontFamily: "TCCC-UnityText-Regular, sans-serif" }}
             >
-            {product.description}
+              {product.description}
             </StyledTypography>
           </Box>
         </StyledCardContent>

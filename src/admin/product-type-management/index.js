@@ -16,6 +16,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Delete, Edit } from "@mui/icons-material";
 import { productTypeService } from "../../api/product-type";
 import useSnackbar from "../../components/utils/message";
+import '../../index.css'; // index.css dosyasını import edin
 
 const ProductTypeManagement = () => {
   const [productTypes, setProductTypes] = useState([]);
@@ -119,9 +120,9 @@ const ProductTypeManagement = () => {
   ];
 
   return (
-    <Container maxWidth="md" style={{ marginTop: "20px" }}>
+    <Container maxWidth="md" style={{ marginTop: "20px", fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
       <Paper elevation={3} style={{ padding: "20px" }}>
-        <h1>Product Type Management</h1>
+        <h1 style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Product Type Management</h1>
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} sm={6} md={4}>
             <TextField
@@ -131,6 +132,7 @@ const ProductTypeManagement = () => {
               fullWidth
               size="small"
               variant="outlined"
+              style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
             />
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -140,6 +142,7 @@ const ProductTypeManagement = () => {
               onClick={handleAddProductType}
               fullWidth
               size="small"
+              style={{ fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}
             >
               {editingProductType ? "Update Product Type" : "Add Product Type"}
             </Button>
@@ -152,7 +155,7 @@ const ProductTypeManagement = () => {
                 onClick={handleCancelEdit}
                 fullWidth
                 size="small"
-                style={{ marginTop: "10px" }}
+                style={{ marginTop: "10px", fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}
               >
                 Cancel
               </Button>
@@ -170,18 +173,18 @@ const ProductTypeManagement = () => {
         </div>
       </Paper>
       <Dialog open={deleteDialogOpen} onClose={closeDeleteDialog}>
-        <DialogTitle>Delete Product Type</DialogTitle>
+        <DialogTitle style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Delete Product Type</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Are you sure you want to delete the product type "
             {productTypeToDelete?.name}"?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeDeleteDialog} color="primary">
+          <Button onClick={closeDeleteDialog} color="primary" style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             No
           </Button>
-          <Button onClick={handleDeleteProductType} color="primary" autoFocus>
+          <Button onClick={handleDeleteProductType} color="primary" autoFocus style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Yes
           </Button>
         </DialogActions>

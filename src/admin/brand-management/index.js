@@ -4,6 +4,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Delete, Edit } from '@mui/icons-material';
 import { brandService } from '../../api/brand';
 import useSnackbar from '../../components/utils/message';
+import '../../index.css'; // index.css dosyasını import edin
 
 const BrandManagement = () => {
   const [brands, setBrands] = useState([]);
@@ -104,9 +105,9 @@ const BrandManagement = () => {
   ];
 
   return (
-    <Container maxWidth="md" style={{ marginTop: '20px' }}>
+    <Container maxWidth="md" style={{ marginTop: '20px', fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
       <Paper elevation={3} style={{ padding: '20px' }}>
-        <h1>Brand Management</h1>
+        <h1 style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Brand Management</h1>
         <Grid container spacing={2} alignItems="center">
           <Grid item xs={12} sm={8}>
             <TextField
@@ -116,14 +117,15 @@ const BrandManagement = () => {
               fullWidth
               size="small"
               variant="outlined"
+              style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}
             />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Button variant="contained" color="primary" onClick={handleAddBrand} fullWidth>
+            <Button variant="contained" color="primary" onClick={handleAddBrand} fullWidth style={{ fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}>
               {editingBrand ? 'Update Brand' : 'Add Brand'}
             </Button>
             {editingBrand && (
-              <Button variant="contained" color="secondary" onClick={handleCancelEdit} fullWidth style={{ marginTop: '10px' }}>
+              <Button variant="contained" color="secondary" onClick={handleCancelEdit} fullWidth style={{ marginTop: '10px', fontFamily: 'TCCC-UnityText-Bold, sans-serif' }}>
                 Cancel
               </Button>
             )}
@@ -137,17 +139,17 @@ const BrandManagement = () => {
         open={deleteDialogOpen}
         onClose={closeDeleteDialog}
       >
-        <DialogTitle>Delete Brand</DialogTitle>
+        <DialogTitle style={{ fontFamily: 'TCCC-UnityHeadline-Bold, serif' }}>Delete Brand</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Are you sure you want to delete the brand "{brandToDelete?.name}"?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeDeleteDialog} color="primary">
+          <Button onClick={closeDeleteDialog} color="primary" style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             No
           </Button>
-          <Button onClick={handleDeleteBrand} color="primary" autoFocus>
+          <Button onClick={handleDeleteBrand} color="primary" autoFocus style={{ fontFamily: 'TCCC-UnityText-Regular, sans-serif' }}>
             Yes
           </Button>
         </DialogActions>

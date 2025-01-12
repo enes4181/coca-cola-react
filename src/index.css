@@ -1,0 +1,88 @@
+/* TCCC-UnityCondensed-Bold-2 */
+@font-face {
+  font-family: 'TCCC-UnityCondensed-Bold-2';
+  src: url('./assets/fonts/TCCC-UnityCondensed-Bold 2.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* TCCC-UnityCondensed-Medium-2 */
+@font-face {
+  font-family: 'TCCC-UnityCondensed-Medium-2';
+  src: url('./assets/fonts/TCCC-UnityCondensed-Medium 2.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* TCCC-UnityHeadline-Bold-2 */
+@font-face {
+  font-family: 'TCCC-UnityHeadline-Bold-2';
+  src: url('./assets/fonts/TCCC-UnityHeadline-Bold 2.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* TCCC-UnityHeadline-Regular-2 */
+@font-face {
+  font-family: 'TCCC-UnityHeadline-Regular-2';
+  src: url('./assets/fonts/TCCC-UnityHeadline-Regular 2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* TCCC-UnityHeadline-Regular */
+@font-face {
+  font-family: 'TCCC-UnityHeadline-Regular';
+  src: url('./assets/fonts/TCCC-UnityHeadline-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* TCCC-UnityText-Black */
+@font-face {
+  font-family: 'TCCC-UnityText-Black';
+  src: url('./assets/fonts/TCCC-UnityText-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* TCCC-UnityText-Bold */
+@font-face {
+  font-family: 'TCCC-UnityText-Bold';
+  src: url('./assets/fonts/TCCC-UnityText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* TCCC-UnityText-BoldItalic */
+@font-face {
+  font-family: 'TCCC-UnityText-BoldItalic';
+  src: url('./assets/fonts/TCCC-UnityText-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* TCCC-UnityText-Medium */
+@font-face {
+  font-family: 'TCCC-UnityText-Medium';
+  src: url('./assets/fonts/TCCC-UnityText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* TCCC-UnityText-Regular */
+@font-face {
+  font-family: 'TCCC-UnityText-Regular';
+  src: url('./assets/fonts/TCCC-UnityText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Genel Stil Tanımlamaları */
+body {
+  font-family: 'TCCC-UnityText-Regular', sans-serif;
+}
+
+h1 {
+  font-family: 'TCCC-UnityHeadline-Bold', serif;
+}
